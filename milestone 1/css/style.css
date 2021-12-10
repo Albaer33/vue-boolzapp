@@ -33,6 +33,7 @@ img {
     background-color: #eaeaea;
     width: 100%;
     height: 80px;
+    padding: 0 15px;
 }
 .user {
     width: 60%;
@@ -78,8 +79,9 @@ img {
 }
 /* profile section */
 .user-option {
+    font-size: 22px;
     color: #b1b1b1;
-    width: 30%;
+    width: 120px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -159,9 +161,49 @@ img {
 .chat-messages {
     width: 100%;
     height: calc(100% - 160px);
+    overflow: hidden;
+    overflow-y: scroll;
 }
+.messages-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.message {
+    padding: 20px;
+    margin: 15px 0;
+    min-width: 200px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.sent {
+    background-color: #d5f9ba;
+    align-self: flex-end;
+    margin-left: 80px;
+}
+.arrived {
+    background-color: white;
+    align-self: flex-start;
+    margin-right: 80px;
+}
+/* bottom bar */
 .input-message {
     width: 100%;
     height: 80px;
+    padding: 0 15px;
     background-color: #e9ebea;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: grey;
+    font-size: 22px;
+}
+.input-message input {
+    width: 80%;
+    height: 80%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
 }
