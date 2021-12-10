@@ -54,7 +54,8 @@ img {
 .col-left {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    height: 100%;
+    width: 450px;
     background-color: #fafafa;
 }
 /* profile section */
@@ -71,9 +72,9 @@ img {
     align-items: center;
 }
 .user-pic {
-    height: 70px;
-    width: 70px;
-    margin-right: 15px;
+    height: 60px;
+    width: 60px;
+    margin: 0 15px;
 }
 .user-option {
     color: #b1b1b1;
@@ -84,13 +85,34 @@ img {
 }
 /* notifications section */
 .notifications {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     background-color: #8edafb;
+}
+.bell-icon {
+    font-size: 24px;
+    color: #8edafb;
+    background-color: white;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 50%;
+}
+.bold {
+    font-weight: bold;
+}
+.underline {
+    color: #4f7484;
+    text-decoration: underline;
 }
 /* search bar section */
 /* chat list section */
 /* RIGHT COL */
 .col-right {
-    width: calc(100% - 400px);
+    width: calc(100% - 450px);
     min-width: 300px;
     background-color: lightcoral;
 }
