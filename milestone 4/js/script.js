@@ -6,6 +6,7 @@ const app = new Vue(
         data: {
             activeContact: 0,
             newMessage: '',
+            newSearch: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -112,6 +113,18 @@ const app = new Vue(
                         status: 'received'
                     })
                 }, 1000);
+            },
+            searchingFilter: function() {
+                // filtra la lista di chat, switchando il dato visible da true a false
+                // con l else rende nuovamente visibili le chat
+                this.contacts.forEach((element) => {
+                    if(!(element.name.toLowerCase().includes(this.newSearch.toLowerCase()))) {
+                        element.visible = false;
+                    }
+                    else {
+                        element.visible = true;
+                    }
+                });
             }
         }
     }

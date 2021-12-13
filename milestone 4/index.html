@@ -50,14 +50,19 @@
                         <!-- search bar section -->
                         <section class="search-bar">
                             <i class="fas fa-search"></i>
-                            <input type="text" placeholder="cerca o inizia una nuova chat">
+                            <input
+                            v-model="newSearch"
+                            @keyup="searchingFilter"
+                            type="text"
+                            placeholder="cerca o inizia una nuova chat">
                         </section>
 
                         <!-- dynamic chat list section -->
                         <section class="contacts">
                             <div
                             @click="selectContact(index)"
-                            v-for="(contact, index) in contacts" 
+                            v-for="(contact, index) in contacts"
+                            v-if="contact.visible"
                             class="user-chat" 
                             :class="{'active-chat': activeContact === index}">
                                 <div class="user-pic">
