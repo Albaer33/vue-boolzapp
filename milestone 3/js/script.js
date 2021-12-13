@@ -5,6 +5,7 @@ const app = new Vue(
         el: '#root',
         data: {
             activeContact: 0,
+            newMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -94,6 +95,23 @@ const app = new Vue(
         methods: {
             selectContact: function(index) {
                 this.activeContact = index;
+            },
+            sendMessage: function() {
+                // genera il messaggio nell array di messaggi in base alla chat a cui si sta inviando
+                this.contacts[this.activeContact].messages.push({
+                    date: dayjs().format('DD/MM/YY HH:mm:ss'),
+                    text: this.newMessage,
+                    status: 'sent',
+                });
+                this.newMessage = '';
+                // genera un messaggio "ok" di tipo received come risposta dopo 1 secondo
+                const answer = setTimeout(() => {
+                    this.contacts[this.activeContact].messages.push({
+                        date: dayjs().format('DD/MM/YY HH:mm:ss'),
+                        text: 'ok',
+                        status: 'received'
+                    })
+                }, 1000);
             }
         }
     }
