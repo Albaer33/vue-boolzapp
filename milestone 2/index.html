@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+    <div id="root">
+        <div class="app-wrapper">
+            <div class="bg-green"></div>
+            <div class="bg-grey"></div>
+            
+            <!-- main window -->
+            <main class="window">
+                <div class="layout">
+                    <div class="col col-left">
+                        <!-- profile section -->
+                        <section class="profile">
+                            <div class="user">
+                                <div class="user-pic">
+                                    <img src="img/avatar_io.jpg" alt="user image">
+                                </div>
+                                <div class="user-name">Nome Utente</div>
+                            </div>
+                            <div class="user-option">
+                                <i class="far fa-circle"></i>
+                                <i class="fas fa-comment-alt"></i>
+                                <i class="fas fa-ellipsis-v"></i>
+                            </div>
+                        </section>
+
+                        <!-- notifications section -->
+                        <section class="notifications">
+                            <div class="bell-icon">
+                                <i class="fas fa-bell-slash"></i>
+                            </div>
+                            <div>
+                                <div class="bold">Ricevi notifiche di nuovi messaggi</div>
+                                <div class="underline">attiva notifiche desktop</div>
+                            </div>
+                        </section>
+
+                        <!-- search bar section -->
+                        <section class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="cerca o inizia una nuova chat">
+                        </section>
+
+                        <!-- dynamic chat list section -->
+                        <section class="contacts">
+                            <div v-for="(contact, index) in contacts" class="user-chat active-chat">
+                                <div class="user-pic">
+                                    <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                                </div>
+                                <div class="user-name">{{contacts[index].name}}</div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col col-right">
+                        <!-- profile chat section -->
+                        <section class="profile">
+                            <div class="user-chat">
+                                <div class="user-pic">
+                                    <img src="img/avatar_io.jpg" alt="user image">
+                                </div>
+                                <div class="user-name">
+                                    Nome Utente
+                                    <div class="last-online">Ultimo accesso oggi alle</div>
+                                </div>
+                            </div>
+                            <div class="user-option">
+                                <i class="fas fa-search"></i>
+                                <i class="fas fa-paperclip"></i>
+                                <i class="fas fa-ellipsis-v"></i>
+                            </div>
+                        </section>
+
+                        <!-- chat messages section -->
+                        <section class="chat-messages">
+                            <div class="messages-container">
+                                <div class="message sent">
+                                    ciao a tutti.
+                                    <div class="date">28/03/2020 10:10:43</div>
+                                </div>
+                                <div class="message arrived">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut in possimus modi sint illo sed, minus delectus animi autem? A similique, doloribus pariatur velit sed nisi omnis officiis sapiente iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eum ipsum itaque earum corrupti voluptatibus ratione eveniet alias, accusantium consequatur aspernatur omnis culpa eaque ex, excepturi, dolores odit. Cum, cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem consequuntur reiciendis doloribus? Mollitia, accusamus officiis. Consectetur quibusdam cum nam quos accusamus est omnis modi velit laboriosam, unde perspiciatis dolore dicta! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto in delectus officia provident aperiam nesciunt, aliquam aut odit deleniti eius culpa? Expedita illum minima et provident sapiente doloribus ipsum unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut in possimus modi sint illo sed, minus delectus animi autem? A similique, doloribus pariatur velit sed nisi omnis officiis sapiente iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eum ipsum itaque earum corrupti voluptatibus ratione eveniet alias, accusantium consequatur aspernatur omnis culpa eaque ex, excepturi, dolores odit. Cum, cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem consequuntur reiciendis doloribus? Mollitia, accusamus officiis. Consectetur quibusdam cum nam quos accusamus est omnis modi velit laboriosam, unde perspiciatis dolore dicta! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto in delectus officia provident aperiam nesciunt, aliquam aut odit deleniti eius culpa? Expedita illum minima et provident sapiente doloribus ipsum unde.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut in possimus modi sint illo sed, minus delectus animi autem? A similique, doloribus pariatur velit sed nisi omnis officiis sapiente iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eum ipsum itaque earum corrupti voluptatibus ratione eveniet alias, accusantium consequatur aspernatur omnis culpa eaque ex, excepturi, dolores odit. Cum, cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem consequuntur reiciendis doloribus? Mollitia, accusamus officiis. Consectetur quibusdam cum nam quos accusamus est omnis modi velit laboriosam, unde perspiciatis dolore dicta! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto in delectus officia provident aperiam nesciunt, aliquam aut odit deleniti eius culpa? Expedita illum minima et provident sapiente doloribus ipsum unde.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut in possimus modi sint illo sed, minus delectus animi autem? A similique, doloribus pariatur velit sed nisi omnis officiis sapiente iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eum ipsum itaque earum corrupti voluptatibus ratione eveniet alias, accusantium consequatur aspernatur omnis culpa eaque ex, excepturi, dolores odit. Cum, cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem consequuntur reiciendis doloribus? Mollitia, accusamus officiis. Consectetur quibusdam cum nam quos accusamus est omnis modi velit laboriosam, unde perspiciatis dolore dicta! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto in delectus officia provident aperiam nesciunt, aliquam aut odit deleniti eius culpa? Expedita illum minima et provident sapiente doloribus ipsum unde.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut in possimus modi sint illo sed, minus delectus animi autem? A similique, doloribus pariatur velit sed nisi omnis officiis sapiente iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eum ipsum itaque earum corrupti voluptatibus ratione eveniet alias, accusantium consequatur aspernatur omnis culpa eaque ex, excepturi, dolores odit. Cum, cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem consequuntur reiciendis doloribus? Mollitia, accusamus officiis. Consectetur quibusdam cum nam quos accusamus est omnis modi velit laboriosam, unde perspiciatis dolore dicta! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto in delectus officia provident aperiam nesciunt, aliquam aut odit deleniti eius culpa? Expedita illum minima et provident sapiente doloribus ipsum unde.
+                                    <div class="date">28/03/2020 10:23:10</div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- input message section -->
+                        <section class="input-message">
+                            <i class="far fa-grin"></i>
+                            <input type="text" placeholder="Scrivi un messaggio">
+                            <i class="fas fa-microphone"></i>
+                        </section>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
