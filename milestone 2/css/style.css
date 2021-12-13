@@ -144,13 +144,17 @@ img {
     overflow: hidden;
     overflow-y: scroll;
 }
-.active-chat {
-    background-color: #e9ebea;
-}
 .user-chat {
     width: 100%;
     padding: 10px 15px;
     display: flex;
+    cursor: pointer;
+}
+.active-chat {
+    background-color: lightgray;
+}
+.user-chat:hover {
+    background-color: #e9ebea;
 }
 /* RIGHT COL */
 .col-right {
@@ -191,7 +195,7 @@ img {
     align-self: flex-end;
     margin-left: 80px;
 }
-.arrived {
+.received {
     background-color: white;
     align-self: flex-start;
     margin-right: 80px;

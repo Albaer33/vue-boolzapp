@@ -91,6 +91,10 @@ const app = new Vue(
                 },
             ]
         },
-        methods: {}
+        methods: {
+            selectContact: function(index) {
+                this.activeContact = index;
+            }
+        }
     }
 );
