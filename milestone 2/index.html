@@ -55,7 +55,10 @@
 
                         <!-- dynamic chat list section -->
                         <section class="contacts">
-                            <div v-for="(contact, index) in contacts" class="user-chat active-chat">
+                            <div 
+                            v-for="(contact, index) in contacts" 
+                            class="user-chat" 
+                            :class="{'active-chat': activeContact === index}">
                                 <div class="user-pic">
                                     <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                                 </div>
