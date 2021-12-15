@@ -1,0 +1,236 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* COMMON */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.app-wrapper {
+    width: 100%;
+    height: 100vh;
+}
+.bg-green {
+    width: 100%;
+    height: 200px;
+    background-color: #009588;
+}
+.bg-grey {
+    width: 100%;
+    height: calc(100% - 200px);
+    background-color: #d5dad8;
+}
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.profile {
+    display: flex;
+    justify-content: space-between;
+    background-color: #eaeaea;
+    width: 100%;
+    height: 80px;
+    padding: 0 15px;
+}
+.user {
+    width: 60%;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+.user-pic {
+    height: 60px;
+    width: 60px;
+}
+.user-name {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* MAIN */
+.window {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    height: 90%;
+    width: 80%;
+}
+.layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.col {
+    height: 100%;
+}
+
+/* LEFT COL */
+.col-left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 450px;
+    background-color: #e9ebea;
+}
+/* profile section */
+.user-option {
+    font-size: 22px;
+    color: #b1b1b1;
+    width: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* notifications section */
+.notifications {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #8edafb;
+}
+.bell-icon {
+    font-size: 24px;
+    color: #8edafb;
+    background-color: white;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 50%;
+}
+.bold {
+    font-weight: bold;
+}
+.underline {
+    color: #4f7484;
+    text-decoration: underline;
+}
+/* search bar section */
+.search-bar {
+    background-color: #e9ebea;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+.search-bar input {
+    border: none;
+    width: 95%;
+    height: 60%;
+    padding-left: 40px;
+}
+.search-bar .fa-search {
+    color: #4f7484;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 30px;
+    font-size: 12px;
+}
+/* chat list section */
+.contacts {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.user-chat {
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    cursor: pointer;
+}
+.active-chat {
+    background-color: lightgray;
+}
+.user-chat:hover {
+    background-color: #e9ebea;
+}
+/* RIGHT COL */
+.col-right {
+    width: calc(100% - 450px);
+    min-width: 300px;
+    background-image: url(../img/mine.jpg);
+}
+/* chat header */
+.last-online {
+    color: grey;
+    font-size: 12px;
+    font-weight: 100;
+    margin-top: 5px;
+}
+/* chat */
+.chat-messages {
+    width: 100%;
+    height: calc(100% - 160px);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.messages-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.message {
+    position: relative;
+    padding: 20px;
+    margin: 15px 0;
+    min-width: 200px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.sent {
+    background-color: #d5f9ba;
+    align-self: flex-end;
+    margin-left: 80px;
+}
+.received {
+    background-color: white;
+    align-self: flex-start;
+    margin-right: 80px;
+}
+.date {
+    color: grey;
+    font-size: 10px;
+    font-weight: 100;
+    text-align: right;
+    margin-top: 10px;
+}
+.message-option {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 16px;
+    color: gray;
+}
+/* bottom bar */
+.input-message {
+    width: 100%;
+    height: 80px;
+    padding: 0 15px;
+    background-color: #e9ebea;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: grey;
+    font-size: 22px;
+}
+.input-message input {
+    width: 80%;
+    height: 80%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
